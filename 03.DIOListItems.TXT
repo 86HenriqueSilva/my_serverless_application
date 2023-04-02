@@ -1,0 +1,9 @@
+Este é um exemplo de função do AWS Lambda escrita em Node.js que lida com uma solicitação HTTP GET para listar todos os itens de uma tabela DynamoDB. A função começa criando uma instância do DocumentClient para interagir com o DynamoDB. Em seguida, ela constrói um objeto params para especificar o nome da tabela.
+
+Depois, ela chama o método scan() da instância do DocumentClient com esse parâmetro para retornar todos os itens na tabela. Se a operação for bem-sucedida, a função define o código de status (statusCode) como 200 (indicando sucesso) e serializa os dados de resposta para uma string JSON contendo apenas os itens da tabela e os define como o responseBody.
+
+Se ocorrer um erro, a função define o statusCode como 403 (indicando acesso negado), define uma mensagem de erro como o responseBody e retorna a resposta de erro.
+
+A função então constrói um objeto de resposta HTTP com os campos statusCode, headers e body definidos com os valores apropriados e o retorna como resultado da função.
+
+Observe que a função está escrita em modo estrito ('use strict') para impor melhores práticas de codificação e evitar erros comuns.

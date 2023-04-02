@@ -1,0 +1,7 @@
+Este é um exemplo de código Node.js usando o AWS SDK para atualizar um item na tabela DynamoDB. A função recebe um evento e um contexto como parâmetros, mas atualmente eles não são usados. A variável documentClient é inicializada usando o construtor DocumentClient do AWS SDK. Em seguida, duas variáveis responseBody e statusCode são inicializadas com valores vazios.
+
+O objeto params é configurado com o nome da tabela "Items", a chave primária do item a ser atualizado (no exemplo, um item com id "item-01"), a expressão de atualização "set itemName = :n, itemPrice = :p" que atualiza o valor das propriedades "itemName" e "itemPrice" com valores específicos e as expressões de atributo de valor que definem os valores específicos para as propriedades atualizadas. A opção ReturnValues é definida como "UPDATED_NEW" para retornar os valores atualizados do item.
+
+Dentro do bloco try-catch, a função update é chamada no objeto documentClient, passando o objeto params. Se a atualização for bem-sucedida, a resposta é convertida em JSON e statusCode é definido como 204. Se a atualização falhar, uma mensagem de erro é atribuída a responseBody e statusCode é definido como 403.
+
+Por fim, um objeto de resposta é construído com o statusCode, o cabeçalho "Content-Type": "application/json" e responseBody, que é retornado pela função.

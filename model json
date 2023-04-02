@@ -1,0 +1,5 @@
+Este é um esquema JSON para um objeto chamado "ItemsInputModel".
+
+O objeto tem três propriedades: "id", "itemName" e "itemPrice". A propriedade "id" é do tipo "string" e a propriedade "itemName" também é do tipo "string". A propriedade "itemPrice" é do tipo "number" (número).
+
+O esquema usa a especificação do rascunho 4 do JSON Schema, como indicado pela palavra-chave "$schema" no início. A palavra-chave "title" fornece um título legível para humanos para o esquema.

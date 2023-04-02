@@ -1,0 +1,10 @@
+Esse código é uma função Lambda da AWS que atualiza um item em uma tabela do DynamoDB.
+
+    O trecho const documentClient = new AWS.DynamoDB.DocumentClient(); cria uma instância do cliente DocumentClient para interagir com o DynamoDB.
+    Em seguida, a função recebe o parâmetro event, que contém informações sobre a requisição recebida pela função Lambda, incluindo pathParameters e body.
+    Depois, a função extrai o valor do id do item a ser atualizado a partir do pathParameters e o nome e preço do item a partir do body.
+    Em seguida, a função monta um objeto params com as informações necessárias para atualizar o item na tabela, incluindo a chave primária (Key) e os novos valores para o nome e preço (UpdateExpression e ExpressionAttributeValues).
+    Por fim, a função utiliza o cliente DocumentClient para executar a operação update e atualiza o valor da variável responseBody com a resposta da operação.
+
+Caso ocorra algum erro durante a operação, a função atualiza a variável responseBody com uma mensagem de erro e define o código de status como 403 (Forbidden). Caso contrário, o código de status é definido como 204 (No Content), indicando que a operação foi realizada com sucesso, mas sem retornar nenhum conteúdo no corpo da resposta.
+

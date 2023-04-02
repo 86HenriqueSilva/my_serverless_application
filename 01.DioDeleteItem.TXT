@@ -1,0 +1,7 @@
+Este é um exemplo de função do AWS Lambda escrita em Node.js que lida com uma solicitação HTTP DELETE para excluir um item de uma tabela DynamoDB. A função começa criando uma instância do DocumentClient para interagir com o DynamoDB. Em seguida, ela extrai o id do item a ser excluído dos pathParameters da solicitação recebida. Depois, ela constrói um objeto params para especificar o nome da tabela e a chave primária do item, e chama o método delete() da instância do DocumentClient com esses parâmetros.
+
+Se a exclusão for bem-sucedida, a função define o código de status (statusCode) como 204 (indicando sucesso sem corpo de resposta), serializa os dados de resposta para uma string JSON e os define como o responseBody. Se ocorrer um erro, a função define o statusCode como 403 (indicando acesso negado), define uma mensagem de erro como o responseBody e retorna a resposta de erro.
+
+A função então constrói um objeto de resposta HTTP com os campos statusCode, headers e body definidos com os valores apropriados e o retorna como resultado da função.
+
+Observe que a função está escrita em modo estrito ('use strict') para impor melhores práticas de codificação e evitar erros comuns.
